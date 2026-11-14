@@ -20,7 +20,7 @@ def prepare_data():
         df, test_size=0.2, stratify=df[TARGET], random_state=77
     )
 
-    PROCESSED.mkdir()
+    PROCESSED.mkdir(parents=True, exist_ok=True)
     train.to_csv(PROCESSED / "train.csv", index=False) # save without unnamed : 0 pandas default index
     test.to_csv(PROCESSED / "test.csv", index=False)
     print(f"train: {train.shape}, test: {test.shape}")

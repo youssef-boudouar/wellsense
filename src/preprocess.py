@@ -15,7 +15,7 @@ def preprocess():
 
     num_cols = ["Age", "Year_of_Study", "Sleep_Hours", "Study_Hours_Per_Week", "GPA", "Social_Media_Hours", "Screen_Time_Hours", "Financial_Stress", "Family_Support", "Attendance_Rate"]
     ord_cols = ["Physical_Activity", "Diet_Quality", "Part_Time_Job", "Previous_Mental_Health_History"]
-    ord_order = [["Low", "Moderate", "High"], ["Poor", "Average", "Good"]]
+    ord_order = [["Low", "Moderate", "High"], ["Poor", "Average", "Good"], ["No", "Yes"], ["No", "Yes"]]
 
     preprocessor = make_column_transformer(
         (make_pipeline(SimpleImputer(strategy="median"), StandardScaler()), num_cols),
